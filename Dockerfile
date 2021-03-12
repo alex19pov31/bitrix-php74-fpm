@@ -6,7 +6,7 @@ RUN apk add tzdata && \
 	[ -f /etc/localtime ] && rm /etc/localtime; \
 	ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime && \
 	addgroup -g 1000 nginx && adduser -D -u 1000 -G nginx nginx && \
-	apk add curl wget git msmtp libzip-dev oniguruma-dev libzip-dev libpng-dev freetype libjpeg-turbo-dev libmcrypt-dev freetype-dev libcurl curl-dev libxml2-dev autoconf g++ make; \
+	apk add openssh curl wget git msmtp libzip-dev oniguruma-dev libzip-dev libpng-dev freetype libjpeg-turbo-dev libmcrypt-dev freetype-dev libcurl curl-dev libxml2-dev autoconf g++ make; \
 	pecl install -f xdebug && \
 	printf "\n" | pecl install mcrypt && \
 	docker-php-ext-enable xdebug && \
